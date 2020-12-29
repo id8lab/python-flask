@@ -9,7 +9,7 @@ import pandas as pd
 #          Define flask app                   #
 ###############################################
 app = Flask(__name__)
-app.secret_key = 'dev fao football app'
+app.secret_key = 'Secret Key'
 
 ###############################################
 #       Render Contact page                   #
