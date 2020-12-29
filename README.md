@@ -6,7 +6,7 @@ Thank you Faouzizi for this example.
 First you need to setup your python environment.
 
 ```shell
-python -m venv venv
+python3 -m venv venv
 ```
 
 this will create your locan python environment.
@@ -22,7 +22,7 @@ you can deactivate it with ```deactivate```
 once you have activated, you can install depencies
 
 ```shell
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Currently the project is launch with
