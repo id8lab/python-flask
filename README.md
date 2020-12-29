@@ -28,7 +28,8 @@ pip3 install -r requirements.txt
 Currently the project is launch with
 
 ```shell
-python main.py
+flask run
 ```
 
+Use preview running application to view the webpage and 
 and you can access the contact form in the browser with URL localhost:5000/contactus
