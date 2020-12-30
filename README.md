@@ -14,7 +14,7 @@ this will create your locan python environment.
 now activate this environment with:
 
 ```shell
-venv/bin/activate
+source venv/bin/activate
 ```
 
 you can deactivate it with ```deactivate```
