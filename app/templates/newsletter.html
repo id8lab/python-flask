@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<!-- News Letter forms -->
+{% block content %}
+<div class="newsletter">
+    <h3>News Letter</h3>
+    <form action="{{ url_for('get_newsletter') }}" method=post>
+        <div>
+            <!-- name forms -->
+            <p>
+                {{ form.name.label }} <br>
+                {{ form.name(placeholder='Your name') }}
+            </p>
+            <!-- email forms -->
+            <p>
+                {{ form.email.label }} <br>
+                {{ form.email(placeholder='Your e-mail ...') }}
+            </p>
+            <!-- Submit button -->
+            <p>
+                {{ form.submit }}
+            </p>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

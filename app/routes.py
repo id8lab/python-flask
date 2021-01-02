@@ -4,12 +4,14 @@ from app import app
 ###############################################
 from flask import Flask, render_template, request
 from forms import ContactForm
+from forms import NewsLetterForm
 import pandas as pd
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!"
+    user = {'username': 'Michael'}
+    return render_template('index.html', title='Home', user=user)
 
 ###############################################
 #       Render Contact page                   #
@@ -27,3 +29,18 @@ def get_contact():
         return render_template('contact.html', form=form)
     else:
         return render_template('contact.html', form=form)
+
+###############################################
+#       Render News letter page               #
+###############################################
+@app.route('/newsletter', methods=["GET","POST"])
+def get_newsletter():
+    form = NewsLetterForm()
+    if request.method == 'POST':
+        name =  request.form["name"]
+        email = request.form["email"]
+        res = pd.DataFrame({'name':name, 'email':email}, index=[0])
+        res.to_csv('./newsletter.csv')
+        return render_template('newsletter.html', form=form)
+    else:
+        return render_template('newsletter.html', form=form)

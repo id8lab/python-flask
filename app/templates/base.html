@@ -1,0 +1,40 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Web Development</title>
+      {% else %}
+      <title>Welcome to Web Development</title>
+      {% endif %}
+      <!-- add the right css file -->
+        {% block styles %}
+        <link rel="stylesheet" href="{{url_for('.static', filename='styles.css')}}">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+              <div class="nav-title">
+                <a href="/index">Web Development</a>
+              </div>
+            </div>
+            <div class="nav-btn">
+              <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+            
+            <div class="nav-links">
+              <a href="/index">Home</a>
+              <a href="#" >Products</a>
+              <a href="/contactus" >Contact</a>
+              <a href="/newsletter">News Letter</a>
+            </div>
+          </div>
+        
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

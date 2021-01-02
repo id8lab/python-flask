@@ -8,3 +8,7 @@ class ContactForm(FlaskForm):
     message = TextAreaField("Message")
     submit = SubmitField("Send")
 
+class NewsLetterForm(FlaskForm):
+    name = TextField("Name")
+    email = TextField("Email")
+    submit = SubmitField("Send")
